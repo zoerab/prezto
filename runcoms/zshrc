@@ -11,3 +11,31 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+alias ll='ls -alh'
+alias top='top'
+alias pulspop='cd /Users/er4zr/Documents/School/Interfacedesign/Pulspop_2013'
+alias j-w='cd /Users/er4zr/Documents/School/Project\ Webdesign/j-w.be'
+alias school='/Users/er4zr/Documents/School/'
+alias tree='tree -a'
+alias extip='curl ipecho.net/plain; echo'
+alias intip='ipconfig getifaddr en1'
+alias htop='sudo htop'
+
+# Custom script for creating a directory and moving into it after it's creation
+mkcd () {
+  case "$1" in
+    */..|*/../) cd -- "$1";; # that doesn't make any sense unless the directory already exists
+    /*/../*) (cd "${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd -- "$1";;
+    /*) mkdir -p "$1" && cd "$1";;
+    */../*) (cd "./${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd "./$1";;
+    ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
+    *) mkdir -p "./$1" && cd "./$1";;
+  esac
+}
+
+
+# VIM FTW
+
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
