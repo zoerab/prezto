@@ -27,6 +27,11 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'homebrew'\
+  'osx'\
+  'git'\
+  'tmux'\
+  'syntax-highlighting'\
   'history' \
   'directory' \
   'spectrum' \
@@ -87,7 +92,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Auto set to 'off' on dumb terminals.
 #zstyle ':prezto:module:prompt' theme 'giddie'
 #zstyle ':prezto:module:prompt' theme 'paradox'
-zstyle ':prezto:module:prompt' theme 'paradox'
+zstyle ':prezto:module:prompt' theme 'agnoster'
 
 #
 # Ruby
