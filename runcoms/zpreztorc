@@ -93,6 +93,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #zstyle ':prezto:module:prompt' theme 'giddie'
 zstyle ':prezto:module:prompt' theme 'paradox'
 #zstyle ':prezto:module:prompt' theme 'agnoster'
+#zstyle ':prezto:module:prompt' theme 'steeef'
 
 #
 # Ruby
