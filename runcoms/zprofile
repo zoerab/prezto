@@ -17,7 +17,7 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
+export EDITOR='vim'
 export VISUAL='nano'
 export PAGER='less'
 
@@ -43,10 +43,11 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  "$HOME"/.npm-packages/bin
   /usr/local/{bin,sbin}
   /opt/local/{share,bin,sbin}
   /Application/VirtualBox.app/Contents/MacOS
-  /users/er4zr/mybin
+  /Users/er4zr/mybin
   $path
 )
 

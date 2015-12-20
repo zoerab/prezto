@@ -21,6 +21,8 @@ alias tree='tree -a'
 alias extip='curl ipecho.net/plain; echo'
 alias intip='ipconfig getifaddr en1'
 alias htop='sudo htop'
+alias bt='wget http://cachefly.cachefly.net/100mb.test -O /dev/null'
+alias bower='noglob bower'
 
 # Custom script for creating a directory and moving into it after it's creation
 mkcd () {
@@ -39,3 +41,8 @@ mkcd () {
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
+
+# Messing around with node
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
