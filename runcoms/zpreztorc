@@ -27,6 +27,8 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'ssh'\
+  'node'\
   'homebrew'\
   'osx'\
   'git'\
