@@ -23,6 +23,7 @@ alias intip='ipconfig getifaddr en1'
 alias htop='sudo htop'
 alias bt='wget http://cachefly.cachefly.net/100mb.test -O /dev/null'
 alias bower='noglob bower'
+alias weather='weather';
 
 # Custom script for creating a directory and moving into it after it's creation
 mkcd () {
@@ -34,6 +35,10 @@ mkcd () {
     ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
     *) mkdir -p "./$1" && cd "./$1";;
   esac
+}
+
+weather(){
+  curl -4 http://wttr.in/$1 
 }
 
 
