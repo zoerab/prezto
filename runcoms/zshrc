@@ -14,8 +14,6 @@ fi
 
 alias ll='ls -alh'
 alias top='top'
-alias pulspop='cd /Users/er4zr/Documents/School/Interfacedesign/Pulspop_2013'
-alias j-w='cd /Users/er4zr/Documents/School/Project\ Webdesign/j-w.be'
 alias school='/Users/er4zr/Documents/School/'
 alias tree='tree -a'
 alias extip='curl ipecho.net/plain; echo'
@@ -23,7 +21,8 @@ alias intip='ipconfig getifaddr en1'
 alias htop='sudo htop'
 alias bt='wget http://cachefly.cachefly.net/100mb.test -O /dev/null'
 alias bower='noglob bower'
-alias weather='weather';
+alias weather='weather'
+alias 4chan-dl='wget -qe robots=off -rHDi.4cdn.org -nc -nd -ERs.jpg,html'
 
 # Custom script for creating a directory and moving into it after it's creation
 mkcd () {
