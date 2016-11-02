@@ -1,9 +1,5 @@
 #
 # Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -15,6 +11,7 @@ fi
 alias ll='ls -alh'
 alias top='top'
 alias school='/Users/er4zr/Documents/School/'
+alias zelf='/Users/er4zr/Documents/School/_ZELFSTUDIE/'
 alias tree='tree -a'
 alias extip='curl ipecho.net/plain; echo'
 alias intip='ipconfig getifaddr en1'
@@ -22,38 +19,46 @@ alias htop='sudo htop'
 alias bt='wget http://cachefly.cachefly.net/100mb.test -O /dev/null'
 alias bower='noglob bower'
 alias weather='weather'
-alias 4chan-dl='wget -qe robots=off -rHDi.4cdn.org -nc -nd -ERs.jpg,html'
+alias 4chan-dl='wget -qe robots=off -rHDi.4cdn.org -nc -nd -ERs.jpg,html --show-progress'
+alias file-gitignore="wget -O .gitignore https://gist.githubusercontent.com/zoerab/ac336f006e952c6dbf01/raw/a5043364a4a4a3f0786d9702a3206770161f6fd1/.gitignore"
+alias 8888="ping 8.8.8.8"
 
-# Custom script for creating a directory and moving into it after it's creation
-mkcd () {
-  case "$1" in
-    */..|*/../) cd -- "$1";; # that doesn't make any sense unless the directory already exists
-    /*/../*) (cd "${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd -- "$1";;
-    /*) mkdir -p "$1" && cd "$1";;
-    */../*) (cd "./${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd "./$1";;
-    ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
-    *) mkdir -p "./$1" && cd "./$1";;
-  esac
-}
-
+# Showing weather
 weather(){
   curl -4 http://wttr.in/$1 
 }
 
+# Auto list files in directory once in it
+function chpwd() {
+    emulate -L zsh
+    ls -alh
+}
 
 # VIM FTW
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 
-# Messing around with node
+# ZSH Vim mode
+#bindkey -v
+#export KEYTIMEOUT=1
+#
+#function zle-line-init zle-keymap-select {
+#    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+#    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_custom_status) $EPS1"
+#    zle reset-prompt
+#}
+#
+#RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_custom_status) $EPS1"
 
-#export NPM_PACKAGES="${HOME}/.npm-packages"
-#export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+# Node
 
-NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="${NPM_PACKAGES}/lib/node_modules:${NODE_PATH}"  
+export PATH="${NPM_PACKAGES}/bin:${PATH}"
+export MANPATH="${NPM_PACKAGES}/share/man:${MANPATH}"
 
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-# unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+# Ruby
+export RBENV_ROOT="/usr/local/var/rbenv"
+export PATH="/usr/local/var/rbenv/shims:/usr/local/bin/:${PATH}"
+
