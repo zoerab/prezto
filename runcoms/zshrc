@@ -8,6 +8,7 @@ fi
 # Customize to your needs...
 alias ll='ls -alh'
 alias top='top'
+alias vi='vim'
 alias school='/Users/er4zr/Documents/School/'
 alias zelf='/Users/er4zr/Documents/School/_ZELFSTUDIE/'
 alias tree='tree -a'
@@ -29,6 +30,7 @@ alias gp="git push"
 alias gl="git log"
 alias ghist="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 alias ghistlog="log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m %C(white)- %d%x1b[0m%x20%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative"
+alias dirs="dirs -v"
 
 # Showing weather
 weather(){
@@ -41,6 +43,9 @@ function chpwd() {
     ls -alh
 }
 
+# Ignoring duplicate commands in history
+export HISTCONTROL=ignoredups
+
 # VIM FTW
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
@@ -51,4 +56,4 @@ export NODE_PATH="${NPM_PACKAGES}/lib/node_modules:${NODE_PATH}"
 export MANPATH="${NPM_PACKAGES}/share/man:${MANPATH}"
 
 # PATH
-export PATH="/usr/local/var/rbenv/shims:/usr/local/bin/:$HOME/.yarn/bin:${NPM_PACKAGES}/bin:$HOME/.composer/vendor/bin:${PATH}"
+export PATH="/usr/local/var/rbenv/shims:/usr/local/bin:$HOME/.yarn/bin:${NPM_PACKAGES}/bin:$HOME/.composer/vendor/bin:${PATH}"
