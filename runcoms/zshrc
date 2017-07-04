@@ -31,6 +31,12 @@ alias gl="git log"
 alias ghist="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 alias ghistlog="log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m %C(white)- %d%x1b[0m%x20%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative"
 alias dirs="dirs -v"
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias df='df -h'
+alias mkdir='mkdir -p'
+alias pbsort='pbpaste | sort | pbcopy'
 
 # Showing weather
 weather(){
@@ -55,6 +61,8 @@ export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="${NPM_PACKAGES}/lib/node_modules:${NODE_PATH}"  
 export MANPATH="${NPM_PACKAGES}/share/man:${MANPATH}"
 
-# PATH
+# GO programming
 export GOPATH=$HOME/go
+
+# PATH
 export PATH="/usr/local/var/rbenv/shims:/usr/local/bin:$HOME/.yarn/bin:${NPM_PACKAGES}/bin:$HOME/.composer/vendor/bin:${PATH}:$GOPATH/bin:/usr/local/opt/go/libexec/bin"
